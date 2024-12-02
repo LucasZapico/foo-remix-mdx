@@ -7,6 +7,8 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+
+
 export default function Index() {
   return (
     <div className="py-10 px-10">

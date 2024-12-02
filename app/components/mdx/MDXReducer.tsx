@@ -1,5 +1,6 @@
+import { CodeBlockMdx } from "./MDXCodeBlock";
 import {
-  // CodeBlockMdx,
+
   HeadingOneMDX,
   HeadingTwoMDX,
   HeadingThreeMDX,
@@ -34,6 +35,6 @@ export const MdxComponents = {
   blockquote: (props: any) => <BlockQuoteMDX {...props} />,
   a: (props: any) => <LinkMDX {...props} />,
   code: (props: any) => <code  class="text-sm sm:text-base inline-flex text-left items-center space-x-2 bg-gray-800 text-white rounded-lg p-2 pl-2" {...props} />,
-  // pre: (props: any) => <CodeBlockMdx {...props} />,
+  pre: (props: any) => <CodeBlockMdx {...props} />,
 };
 

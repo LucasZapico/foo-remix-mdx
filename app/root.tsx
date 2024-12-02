@@ -9,10 +9,8 @@ import {
 import clsx from "clsx";
 import {
   PreventFlashOnWrongTheme,
-  ThemeProvider,
   useTheme,
 } from "remix-themes";
-import type { LinksFunction } from "@remix-run/node";
 import { themeSessionResolver } from "@/sessions.server";
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { Providers } from "@/providers";

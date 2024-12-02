@@ -17,6 +17,8 @@ import { Providers } from "@/providers";
 
 import "./tailwind.css";
 
+import { MainNav } from "@/components/nav/MainNav";
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
   return {
@@ -39,6 +41,7 @@ export function Root({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <MainNav/>
         {children}
         <ScrollRestoration />
         <Scripts />

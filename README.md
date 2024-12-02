@@ -13,7 +13,14 @@ Step through adding [mdx](https://mdxjs.com/docs/) support to a site.
   - highlighted 
 - custom components 
 - prev next article 
-- 
+
+## Branches 
+
+- **`mark/` branches**:  a branch prefixed by `mark` is a checkpoint for the given functionality 
+
+- **`feat/toc`**: WIP implementation of remark table of content for markdown docs 
+
+
 
 ## Stack 
 

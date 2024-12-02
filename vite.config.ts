@@ -4,6 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths"
 import mdx from "@mdx-js/rollup"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkMdxFrontmatter from "remark-mdx-frontmatter"
+import remarkToc from "remark-toc"
 
 declare module "@remix-run/node" {
   interface Future {
@@ -16,7 +17,11 @@ export default defineConfig({
     mdx({
       providerImportSource: "@mdx-js/react",
       // remark plugins
-      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+      remarkPlugins: [
+        remarkFrontmatter,
+        remarkMdxFrontmatter,
+        remarkToc,
+      ],
       //  rehype plugin
       // rehypePlugins: [],
     }),

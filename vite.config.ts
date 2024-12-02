@@ -1,23 +1,24 @@
-import { vitePlugin as remix } from "@remix-run/dev";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
-import mdx from "@mdx-js/rollup";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import { vitePlugin as remix } from "@remix-run/dev"
+import { defineConfig } from "vite"
+import tsconfigPaths from "vite-tsconfig-paths"
+import mdx from "@mdx-js/rollup"
+import remarkFrontmatter from "remark-frontmatter"
+import remarkMdxFrontmatter from "remark-mdx-frontmatter"
 
 declare module "@remix-run/node" {
   interface Future {
-    v3_singleFetch: true;
+    v3_singleFetch: true
   }
 }
 
 export default defineConfig({
   plugins: [
     mdx({
+      providerImportSource: "@mdx-js/react",
       // remark plugins
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       //  rehype plugin
-      rehypePlugins: [],
+      // rehypePlugins: [],
     }),
     remix({
       future: {
@@ -31,9 +32,12 @@ export default defineConfig({
 
     tsconfigPaths(),
   ],
+  optimizeDeps: {
+    include: ["react/jsx-runtime"],
+  },
   resolve: {
     alias: {
       "@/": "app/",
     },
   },
-});
+})
